@@ -1,0 +1,32 @@
+
+:root { --bg-dark: #1e1e1e; --accent: #007acc; --text: #d4d4d4; --success: #4ec9b0; }
+body { font-family: 'Segoe UI', sans-serif; background: var(--bg-dark); color: var(--text); margin: 0; display: flex; flex-direction: column; height: 100vh; overflow: hidden;}
+#tabs-container { display: flex; background: #2d2d2d; height: 40px; align-items: center; padding-left:10px; -webkit-app-region: drag; border-bottom: 1px solid #333;}
+.tab { padding: 8px 15px; background: #2d2d2d; cursor: pointer; border-right: 1px solid #3e3e42; font-size: 0.9em; -webkit-app-region: no-drag; display:flex; align-items:center; gap:8px;}
+.tab:hover { background: #333; }
+.tab.active { background: var(--bg-dark); border-top: 2px solid var(--accent); }
+.tab .close { font-weight:bold; padding:0 5px; border-radius:50%; }
+.tab .close:hover { background: #555; }
+#add-tab { padding: 5px 12px; cursor: pointer; -webkit-app-region: no-drag; font-size: 1.2em; font-weight:bold; }
+#add-tab:hover { color: white; }
+#content-container { flex: 1; padding: 20px; overflow-y: auto; }
+.tab-content { display: none; }
+.tab-content.active { display: block; animation: fadeIn 0.2s; }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+.control-group { background: #252526; padding: 25px; border-radius: 8px; border: 1px solid #3e3e42; max-width: 600px; margin: 0 auto; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+label { display:block; margin-top:15px; color:#aaa; font-size:0.9em; margin-bottom:5px; }
+input[type="text"], input[type="number"] { width: 100%; padding: 10px; background: #3c3c3c; border: 1px solid #3e3e42; color: white; border-radius:4px; box-sizing: border-box; }
+input:focus { outline: 1px solid var(--accent); border-color: var(--accent); }
+.mode-switch { display: flex; margin-bottom: 25px; background:#333; padding:4px; border-radius:6px; width:fit-content;}
+.mode-btn { padding: 8px 25px; cursor: pointer; border-radius: 4px; transition:0.2s; }
+.mode-btn.active { background: var(--accent); color: white; font-weight:bold; }
+.hidden { display: none; }
+.actions { margin-top: 25px; display:flex; gap:10px; }
+button.action-btn { padding: 10px 25px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; font-size:1em; transition:0.2s;}
+.btn-start { background: #388e3c; color: white; } .btn-start:hover { background: #2e7d32; }
+.btn-stop { background: #d32f2f; color: white; } .btn-stop:hover { background: #b71c1c; }
+.btn-stop:disabled { background: #444; color:#888; cursor:not-allowed; }
+.status-box { margin-top: 20px; background: #111; padding: 15px; border-radius: 4px; font-family: 'Consolas', monospace; border: 1px solid #333; }
+.url-display { color: var(--success); word-break: break-all; user-select:text; }
+.copy-btn { background: transparent; border: 1px solid #555; color: #aaa; cursor: pointer; padding: 2px 8px; border-radius: 4px; margin-left: 10px; font-size: 0.8em; }
+.copy-btn:hover { border-color: var(--accent); color: var(--accent); }

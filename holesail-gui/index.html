@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Holesail</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+    <div id="tabs-container"><div id="add-tab">+</div></div>
+    <div id="content-container"></div>
+    
+    <template id="tab-template">
+        <div class="control-group">
+            <div class="mode-switch">
+                <div class="mode-btn active" data-mode="server">Server Mode</div>
+                <div class="mode-btn" data-mode="client">Client Mode</div>
+            </div>
+            
+            <div class="server-inputs">
+                <label>Port to Share (Local Application)</label>
+                <input type="number" class="inp-port" placeholder="e.g. 3000">
+                
+                <label>Host (Optional)</label>
+                <input type="text" class="inp-host" value="0.0.0.0">
+                
+                <label>Custom Key (Optional)</label>
+                <input type="text" class="inp-key" placeholder="Leave empty to generate new">
+                
+                <label style="display:flex; align-items:center; gap:10px; margin-top:15px; cursor:pointer;">
+                    <input type="checkbox" class="inp-secure"> Secure Mode (Encrypted)
+                </label>
+            </div>
+            
+            <div class="client-inputs hidden">
+                <label>Holesail Connection Key/URL</label>
+                <input type="text" class="inp-conn-string" placeholder="hs://...">
+                
+                <label>Bind to Local Port</label>
+                <input type="number" class="inp-bind-port" placeholder="e.g. 8080">
+                
+                <label>Host (Optional)</label>
+                <input type="text" class="inp-client-host" value="0.0.0.0">
+            </div>
+            
+            <div class="actions">
+                <button class="action-btn btn-start">Start Holesail</button>
+                <button class="action-btn btn-stop" disabled>Stop</button>
+            </div>
+        </div>
+        
+        <div class="status-box hidden">
+            <div style="margin-bottom:5px">Status: <span style="color:#4ec9b0">● Live</span></div>
+            <div class="url-row hidden" style="display:flex; align-items:center; justify-content:space-between; margin-top:10px; border-top:1px solid #333; padding-top:10px;">
+                <span class="url-display"></span> 
+                <button class="copy-btn">Copy URL</button>
+            </div>
+        </div>
+    </template>
+    
+    <script src="renderer.js"></script>
+</body>
+</html>

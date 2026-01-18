@@ -1,0 +1,28 @@
+{
+  "name": "holesail-gui",
+  "version": "1.0.0",
+  "description": "Holesail GUI",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "dependencies": {
+    "holesail": "latest"
+  },
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1"
+  },
+  "build": {
+    "appId": "com.holesail.gui",
+    "productName": "Holesail",
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": "AppImage",
+      "category": "Network"
+    }
+  }
+}
