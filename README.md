@@ -16,4 +16,4 @@ node install-gui.js
 
 ## Final words:
 Pretty Much it! 
-My Discord: `hackerdogs.`
+My Discord: `confidentialpeacock`
